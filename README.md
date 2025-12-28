@@ -129,9 +129,6 @@ Or create your own account through the registration page!
 ![Task Dashboard Grid](screenshots/home.png)
 *Modern dashboard with statistics and grid layout*
 
-### 📋 Dashboard - List View
-![Task Dashboard List](screenshots/list-view.png)
-*Alternative list view for detailed task information*
 
 ### 🔐 Authentication
 <table>
@@ -145,38 +142,6 @@ Or create your own account through the registration page!
       <img src="screenshots/signup.png" width="400px" alt="Registration Screen"/>
       <br />
       <sub><b>Registration Screen</b></sub>
-    </td>
-  </tr>
-</table>
-
-### 📝 Task Management
-<table>
-  <tr>
-    <td align="center">
-      <img src="screenshots/create-task.png" width="400px" alt="Create Task"/>
-      <br />
-      <sub><b>Create Task Dialog</b></sub>
-    </td>
-    <td align="center">
-      <img src="screenshots/task-details.png" width="400px" alt="Task Details"/>
-      <br />
-      <sub><b>Task Details & Edit</b></sub>
-    </td>
-  </tr>
-</table>
-
-### 📊 Features Showcase
-<table>
-  <tr>
-    <td align="center">
-      <img src="screenshots/search-filter.png" width="400px" alt="Search and Filter"/>
-      <br />
-      <sub><b>Search & Filter</b></sub>
-    </td>
-    <td align="center">
-      <img src="screenshots/statistics.png" width="400px" alt="Statistics"/>
-      <br />
-      <sub><b>Task Statistics</b></sub>
     </td>
   </tr>
 </table>
@@ -915,15 +880,6 @@ flutter run -d chrome
 ## 📄 License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
----
-
-## 👨‍💻 Author
-
-**[Your Name]**
-- Email: [your.email@example.com]
-- LinkedIn: [your-linkedin-profile]
-- GitHub: [@yourusername](https://github.com/yourusername)
 
 ---
 
