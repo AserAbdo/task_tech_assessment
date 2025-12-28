@@ -1,64 +1,226 @@
-# Task Management API
+# 🚀 Task Management Application
 
-A RESTful API backend for a Task Management Application built with Laravel 12 and JWT authentication.
+<div align="center">
+
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-Web-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-Auth-000000?style=for-the-badge&logo=json-web-tokens&logoColor=white)
+
+**A modern, full-stack task management application built for the Junior Software Engineer technical assessment**
+
+[Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [API Docs](#-api-documentation) • [Screenshots](#-screenshots)
+
+</div>
+
+---
 
 ## 📋 Table of Contents
 
-- [Features](#features)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Database Setup](#database-setup)
-- [Running the Application](#running-the-application)
-- [API Documentation](#api-documentation)
-- [Authentication Flow](#authentication-flow)
-- [Testing](#testing)
-- [Project Structure](#project-structure)
+- [Overview](#-overview)
+- [Features](#-features)
+- [Demo Credentials](#-demo-credentials)
+- [Tech Stack](#-tech-stack)
+- [Screenshots](#-screenshots)
+- [Installation](#-installation)
+  - [Backend Setup](#backend-setup-laravel)
+  - [Frontend Setup](#frontend-setup-flutter-web)
+- [API Documentation](#-api-documentation)
+- [Project Structure](#-project-structure)
+- [Testing](#-testing)
+- [Assumptions & Design Decisions](#-assumptions--design-decisions)
+- [Future Enhancements](#-future-enhancements)
+
+---
+
+## 🎯 Overview
+
+This is a full-stack task management application that allows users to create, organize, and track their tasks efficiently. The application features a modern, responsive UI with smooth animations, comprehensive task management capabilities, and secure JWT-based authentication.
+
+**Built as part of a technical assessment to demonstrate:**
+- Full-stack development skills (Backend + Frontend)
+- RESTful API design principles
+- Modern UI/UX implementation
+- Security best practices (JWT, password hashing, user isolation)
+- Clean code architecture
+- Comprehensive documentation
+
+---
 
 ## ✨ Features
 
-- **JWT Authentication**: Secure token-based authentication using `tymon/jwt-auth`
-- **User Registration & Login**: Complete auth system with token refresh
-- **Task CRUD Operations**: Create, Read, Update, Delete tasks
-- **Task Filtering & Search**: Filter by status, search by title
-- **Pagination**: Configurable pagination for task listing
-- **User Isolation**: Users can only access their own tasks
-- **CORS Support**: Configured for Flutter Web frontend integration
-- **Comprehensive Validation**: Request validation with detailed error messages
-- **API Tests**: Full test coverage using Pest PHP
+### 🔐 Authentication
+- ✅ User registration with validation
+- ✅ Secure login with JWT tokens
+- ✅ Token refresh mechanism
+- ✅ Password hashing with bcrypt
+- ✅ Protected routes and API endpoints
+
+### 📝 Task Management
+- ✅ Create, read, update, and delete tasks
+- ✅ Task status management (Pending, In Progress, Done)
+- ✅ Search tasks by title
+- ✅ Filter tasks by status
+- ✅ Task pagination with smooth loading
+- ✅ User-specific task isolation
+- ✅ Real-time task statistics dashboard
+
+### 🎨 User Interface
+- ✅ Modern, responsive design
+- ✅ Smooth animations and transitions
+- ✅ Grid/List view toggle
+- ✅ Glassmorphic design elements
+- ✅ Loading states and error handling
+- ✅ Empty state illustrations
+- ✅ Toast notifications for actions
+- ✅ Mobile-responsive layout
+
+### 🛡️ Security
+- ✅ JWT token-based authentication
+- ✅ Password confirmation on registration
+- ✅ User data isolation (users only see their own tasks)
+- ✅ Input validation on frontend and backend
+- ✅ CORS protection
+- ✅ SQL injection protection via Eloquent ORM
+
+---
+
+## 🎮 Demo Credentials
+
+You can test the application using these credentials:
+
+```
+Email: demo@example.com
+Password: password123
+```
+
+Or create your own account through the registration page!
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+- **Framework:** Laravel 12
+- **Authentication:** JWT (tymon/jwt-auth)
+- **Database:** MySQL 8.0 / SQLite
+- **API:** RESTful with JSON responses
+- **Testing:** Pest PHP
+
+### Frontend
+- **Framework:** Flutter Web
+- **State Management:** Provider
+- **HTTP Client:** Dio / HTTP package
+- **Storage:** Shared Preferences
+- **UI:** Material Design 3
+
+### DevOps
+- **Version Control:** Git
+- **Package Manager:** Composer (Backend), Pub (Frontend)
+- **Environment:** PHP 8.2+, Flutter 3.x
+
+---
 
 ## 📸 Screenshots
 
-| Task Dashboard |
-|:---:|
-| ![Task Dashboard](screenshots/home.png) |
+<div align="center">
 
-| Login Screen | Registration Screen |
-|:---:|:---:|
-| ![Login Screen](screenshots/login.png) | ![Registration Screen](screenshots/signup.png) |
+### 🏠 Dashboard - Grid View
+![Task Dashboard Grid](screenshots/home.png)
+*Modern dashboard with statistics and grid layout*
 
-## 📦 Requirements
+### 📋 Dashboard - List View
+![Task Dashboard List](screenshots/list-view.png)
+*Alternative list view for detailed task information*
 
-- PHP >= 8.2
-- Composer
-- MySQL 8.0+ or SQLite
-- Node.js & NPM (for development tools)
+### 🔐 Authentication
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/login.png" width="400px" alt="Login Screen"/>
+      <br />
+      <sub><b>Login Screen</b></sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/signup.png" width="400px" alt="Registration Screen"/>
+      <br />
+      <sub><b>Registration Screen</b></sub>
+    </td>
+  </tr>
+</table>
+
+### 📝 Task Management
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/create-task.png" width="400px" alt="Create Task"/>
+      <br />
+      <sub><b>Create Task Dialog</b></sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/task-details.png" width="400px" alt="Task Details"/>
+      <br />
+      <sub><b>Task Details & Edit</b></sub>
+    </td>
+  </tr>
+</table>
+
+### 📊 Features Showcase
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/search-filter.png" width="400px" alt="Search and Filter"/>
+      <br />
+      <sub><b>Search & Filter</b></sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/statistics.png" width="400px" alt="Statistics"/>
+      <br />
+      <sub><b>Task Statistics</b></sub>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+---
 
 ## 🚀 Installation
 
-### 1. Clone the Repository
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **PHP** >= 8.2
+- **Composer** (latest version)
+- **MySQL** 8.0+ or **SQLite**
+- **Flutter** SDK 3.x+
+- **Git**
+
+---
+
+### Backend Setup (Laravel)
+
+#### 1️⃣ Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd task_tech_assessment
+git clone https://github.com/yourusername/task-management-app.git
+cd task-management-app
 ```
 
-### 2. Install Dependencies
+#### 2️⃣ Navigate to Backend Directory
+
+```bash
+cd backend
+```
+
+#### 3️⃣ Install PHP Dependencies
 
 ```bash
 composer install
 ```
 
-### 3. Environment Setup
+#### 4️⃣ Environment Configuration
 
 ```bash
 # Copy environment file
@@ -67,77 +229,119 @@ cp .env.example .env
 # Generate application key
 php artisan key:generate
 
-# Generate JWT secret key
+# Generate JWT secret
 php artisan jwt:secret
 ```
 
-### 4. Configure Environment Variables
+#### 5️⃣ Configure Database
 
-Edit the `.env` file and set your database credentials:
+**Option A: MySQL (Recommended for Production)**
+
+Edit `.env` file:
 
 ```env
-# For MySQL
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=task_management
 DB_USERNAME=root
 DB_PASSWORD=your_password
-
-# Or for SQLite (simpler setup)
-DB_CONNECTION=sqlite
-DB_DATABASE=database/database.sqlite
 ```
 
-## 🗄️ Database Setup
-
-### Option 1: MySQL
-
+Create the database:
 ```bash
-# Create the database
 mysql -u root -p -e "CREATE DATABASE task_management;"
-
-# Run migrations
-php artisan migrate
-
-# (Optional) Seed with dummy data
-php artisan db:seed
 ```
 
-### Option 2: SQLite
+**Option B: SQLite (Easier for Testing)**
 
+Edit `.env` file:
+
+```env
+DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/database/database.sqlite
+```
+
+Create the database file:
 ```bash
-# Create the SQLite database file
 touch database/database.sqlite
+```
 
-# Run migrations
+#### 6️⃣ Run Migrations
+
+```bash
 php artisan migrate
+```
 
-# (Optional) Seed with dummy data
+#### 7️⃣ (Optional) Seed Demo Data
+
+```bash
 php artisan db:seed
 ```
 
-### Demo Credentials (After Seeding)
+This creates a demo user:
+- Email: `demo@example.com`
+- Password: `password123`
 
-```
-Email: demo@example.com
-Password: password123
-```
-
-## 🏃 Running the Application
+#### 8️⃣ Start the Development Server
 
 ```bash
-# Start the development server
 php artisan serve
 ```
 
-The API will be available at `http://localhost:8000`
+✅ Backend API is now running at: **http://localhost:8000**
 
-### Health Check
+#### 9️⃣ Test the API
 
 ```bash
 curl http://localhost:8000/api/health
 ```
+
+Expected response:
+```json
+{
+  "status": "ok",
+  "message": "Task Management API is running"
+}
+```
+
+---
+
+### Frontend Setup (Flutter Web)
+
+#### 1️⃣ Navigate to Frontend Directory
+
+```bash
+cd ../frontend
+```
+
+#### 2️⃣ Install Flutter Dependencies
+
+```bash
+flutter pub get
+```
+
+#### 3️⃣ Configure API Base URL
+
+Edit `lib/services/api_service.dart` and update the base URL if needed:
+
+```dart
+static const String baseUrl = 'http://localhost:8000/api';
+```
+
+#### 4️⃣ Run Flutter Web Application
+
+```bash
+# Development mode
+flutter run -d chrome
+
+# Or build for production
+flutter build web
+```
+
+✅ Frontend is now running at: **http://localhost:xxxx** (port will be shown in terminal)
+
+---
 
 ## 📖 API Documentation
 
@@ -149,14 +353,13 @@ http://localhost:8000/api
 
 ### Response Format
 
-All responses follow this structure:
+All API responses follow this consistent structure:
 
 ```json
 {
-    "success": true|false,
-    "message": "Response message",
-    "data": { ... },
-    "errors": { ... }  // Only on validation errors
+    "success": true,
+    "message": "Operation message",
+    "data": { ... }
 }
 ```
 
@@ -168,6 +371,7 @@ All responses follow this structure:
 
 ```http
 POST /api/register
+Content-Type: application/json
 ```
 
 **Request Body:**
@@ -180,7 +384,7 @@ POST /api/register
 }
 ```
 
-**Response (201 Created):**
+**Success Response (201):**
 ```json
 {
     "success": true,
@@ -192,7 +396,7 @@ POST /api/register
             "email": "john@example.com",
             "created_at": "2024-12-28T19:24:00.000000Z"
         },
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGci...",
         "token_type": "bearer",
         "expires_in": 3600
     }
@@ -205,6 +409,7 @@ POST /api/register
 
 ```http
 POST /api/login
+Content-Type: application/json
 ```
 
 **Request Body:**
@@ -215,19 +420,14 @@ POST /api/login
 }
 ```
 
-**Response (200 OK):**
+**Success Response (200):**
 ```json
 {
     "success": true,
     "message": "Login successful",
     "data": {
-        "user": {
-            "id": 1,
-            "name": "John Doe",
-            "email": "john@example.com",
-            "created_at": "2024-12-28T19:24:00.000000Z"
-        },
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+        "user": { ... },
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGci...",
         "token_type": "bearer",
         "expires_in": 3600
     }
@@ -243,21 +443,6 @@ GET /api/me
 Authorization: Bearer {token}
 ```
 
-**Response (200 OK):**
-```json
-{
-    "success": true,
-    "data": {
-        "user": {
-            "id": 1,
-            "name": "John Doe",
-            "email": "john@example.com",
-            "created_at": "2024-12-28T19:24:00.000000Z"
-        }
-    }
-}
-```
-
 ---
 
 #### Logout
@@ -265,14 +450,6 @@ Authorization: Bearer {token}
 ```http
 POST /api/logout
 Authorization: Bearer {token}
-```
-
-**Response (200 OK):**
-```json
-{
-    "success": true,
-    "message": "Successfully logged out"
-}
 ```
 
 ---
@@ -284,49 +461,31 @@ POST /api/refresh
 Authorization: Bearer {token}
 ```
 
-**Response (200 OK):**
-```json
-{
-    "success": true,
-    "message": "Token refreshed successfully",
-    "data": {
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
-        "token_type": "bearer",
-        "expires_in": 3600
-    }
-}
-```
-
 ---
 
 ### 📝 Task Endpoints
 
-> **Note:** All task endpoints require authentication. Include the `Authorization: Bearer {token}` header.
+> **Note:** All task endpoints require authentication header: `Authorization: Bearer {token}`
 
-#### List Tasks
+#### List Tasks (with Pagination)
 
 ```http
-GET /api/tasks
+GET /api/tasks?page=1&per_page=15&status=pending&search=project
 Authorization: Bearer {token}
 ```
 
 **Query Parameters:**
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `status` | string | Filter by status: `pending`, `in_progress`, `done` |
-| `search` | string | Search in task titles |
-| `per_page` | integer | Items per page (default: 15, max: 100) |
-| `page` | integer | Page number |
-| `sort_by` | string | Sort field: `title`, `status`, `created_at`, `updated_at` |
-| `sort_order` | string | Sort order: `asc`, `desc` |
 
-**Example Request:**
-```bash
-curl -X GET "http://localhost:8000/api/tasks?status=pending&per_page=10" \
-  -H "Authorization: Bearer {token}"
-```
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `page` | integer | 1 | Page number |
+| `per_page` | integer | 15 | Items per page (max: 100) |
+| `status` | string | - | Filter: `pending`, `in_progress`, `done` |
+| `search` | string | - | Search in task titles |
+| `sort_by` | string | `created_at` | Sort field |
+| `sort_order` | string | `desc` | Sort order: `asc`, `desc` |
 
-**Response (200 OK):**
+**Success Response (200):**
 ```json
 {
     "success": true,
@@ -334,7 +493,6 @@ curl -X GET "http://localhost:8000/api/tasks?status=pending&per_page=10" \
         "tasks": [
             {
                 "id": 1,
-                "user_id": 1,
                 "title": "Complete project documentation",
                 "description": "Write comprehensive API docs",
                 "status": "pending",
@@ -344,11 +502,11 @@ curl -X GET "http://localhost:8000/api/tasks?status=pending&per_page=10" \
         ],
         "pagination": {
             "current_page": 1,
-            "last_page": 2,
-            "per_page": 10,
-            "total": 15,
+            "last_page": 3,
+            "per_page": 15,
+            "total": 42,
             "from": 1,
-            "to": 10
+            "to": 15
         }
     }
 }
@@ -361,41 +519,22 @@ curl -X GET "http://localhost:8000/api/tasks?status=pending&per_page=10" \
 ```http
 POST /api/tasks
 Authorization: Bearer {token}
+Content-Type: application/json
 ```
 
 **Request Body:**
 ```json
 {
-    "title": "New Task",
+    "title": "New Task Title",
     "description": "Optional task description",
     "status": "pending"
 }
 ```
 
-| Field | Required | Type | Description |
-|-------|----------|------|-------------|
-| `title` | Yes | string | Task title (max 255 chars) |
-| `description` | No | string | Task description (max 1000 chars) |
-| `status` | No | string | `pending` (default), `in_progress`, `done` |
-
-**Response (201 Created):**
-```json
-{
-    "success": true,
-    "message": "Task created successfully",
-    "data": {
-        "task": {
-            "id": 1,
-            "user_id": 1,
-            "title": "New Task",
-            "description": "Optional task description",
-            "status": "pending",
-            "created_at": "2024-12-28T19:24:00.000000Z",
-            "updated_at": "2024-12-28T19:24:00.000000Z"
-        }
-    }
-}
-```
+**Validation Rules:**
+- `title`: required, string, max 255 characters
+- `description`: optional, string, max 1000 characters
+- `status`: optional, enum (`pending`, `in_progress`, `done`)
 
 ---
 
@@ -406,24 +545,6 @@ GET /api/tasks/{id}
 Authorization: Bearer {token}
 ```
 
-**Response (200 OK):**
-```json
-{
-    "success": true,
-    "data": {
-        "task": {
-            "id": 1,
-            "user_id": 1,
-            "title": "Task Title",
-            "description": "Task description",
-            "status": "pending",
-            "created_at": "2024-12-28T19:24:00.000000Z",
-            "updated_at": "2024-12-28T19:24:00.000000Z"
-        }
-    }
-}
-```
-
 ---
 
 #### Update Task
@@ -431,6 +552,7 @@ Authorization: Bearer {token}
 ```http
 PUT /api/tasks/{id}
 Authorization: Bearer {token}
+Content-Type: application/json
 ```
 
 **Request Body (all fields optional):**
@@ -439,25 +561,6 @@ Authorization: Bearer {token}
     "title": "Updated Title",
     "description": "Updated description",
     "status": "done"
-}
-```
-
-**Response (200 OK):**
-```json
-{
-    "success": true,
-    "message": "Task updated successfully",
-    "data": {
-        "task": {
-            "id": 1,
-            "user_id": 1,
-            "title": "Updated Title",
-            "description": "Updated description",
-            "status": "done",
-            "created_at": "2024-12-28T19:24:00.000000Z",
-            "updated_at": "2024-12-28T19:30:00.000000Z"
-        }
-    }
 }
 ```
 
@@ -470,7 +573,7 @@ DELETE /api/tasks/{id}
 Authorization: Bearer {token}
 ```
 
-**Response (200 OK):**
+**Success Response (200):**
 ```json
 {
     "success": true,
@@ -487,16 +590,16 @@ GET /api/tasks/stats
 Authorization: Bearer {token}
 ```
 
-**Response (200 OK):**
+**Success Response (200):**
 ```json
 {
     "success": true,
     "data": {
         "stats": {
-            "total": 15,
-            "pending": 5,
-            "in_progress": 3,
-            "done": 7
+            "total": 42,
+            "pending": 15,
+            "in_progress": 10,
+            "done": 17
         }
     }
 }
@@ -513,7 +616,7 @@ Authorization: Bearer {token}
     "message": "Validation failed",
     "errors": {
         "title": ["The title field is required."],
-        "status": ["The selected status is invalid."]
+        "email": ["The email has already been taken."]
     }
 }
 ```
@@ -533,42 +636,87 @@ Authorization: Bearer {token}
 }
 ```
 
+#### Server Error (500)
+```json
+{
+    "success": false,
+    "message": "Internal server error"
+}
+```
+
 ---
 
-## 🔒 Authentication Flow
+## 📂 Project Structure
 
-### 1. Register or Login
-Make a POST request to `/api/register` or `/api/login` to obtain a JWT token.
-
-### 2. Store the Token
-Store the received token securely in your frontend application.
-
-### 3. Include Token in Requests
-Add the token to the `Authorization` header for all protected endpoints:
 ```
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...
+task-management-app/
+├── backend/                          # Laravel Backend
+│   ├── app/
+│   │   ├── Http/
+│   │   │   └── Controllers/
+│   │   │       └── Api/
+│   │   │           ├── AuthController.php       # Authentication logic
+│   │   │           └── TaskController.php       # Task CRUD operations
+│   │   └── Models/
+│   │       ├── User.php                         # User model with JWT
+│   │       └── Task.php                         # Task model
+│   ├── config/
+│   │   ├── auth.php                             # Auth guards (JWT)
+│   │   ├── cors.php                             # CORS configuration
+│   │   └── jwt.php                              # JWT settings
+│   ├── database/
+│   │   ├── factories/
+│   │   │   ├── UserFactory.php
+│   │   │   └── TaskFactory.php
+│   │   ├── migrations/
+│   │   │   ├── 2024_xx_xx_create_users_table.php
+│   │   │   └── 2024_xx_xx_create_tasks_table.php
+│   │   └── seeders/
+│   │       └── DatabaseSeeder.php               # Demo data seeder
+│   ├── routes/
+│   │   └── api.php                              # API routes
+│   ├── tests/
+│   │   └── Feature/
+│   │       ├── AuthTest.php                     # Authentication tests
+│   │       └── TaskTest.php                     # Task CRUD tests
+│   ├── .env.example                             # Environment template
+│   ├── composer.json                            # PHP dependencies
+│   └── README.md
+│
+└── frontend/                         # Flutter Web Frontend
+    ├── lib/
+    │   ├── main.dart                            # App entry point
+    │   ├── models/
+    │   │   ├── user.dart                        # User model
+    │   │   └── task.dart                        # Task model
+    │   ├── providers/
+    │   │   ├── auth_provider.dart               # Auth state management
+    │   │   └── task_provider.dart               # Task state management
+    │   ├── screens/
+    │   │   ├── login_screen.dart                # Login UI
+    │   │   ├── register_screen.dart             # Registration UI
+    │   │   └── tasks_screen.dart                # Main task dashboard
+    │   ├── services/
+    │   │   ├── api_service.dart                 # HTTP client wrapper
+    │   │   └── auth_service.dart                # Token management
+    │   └── widgets/
+    │       ├── task_card.dart                   # Task card component
+    │       └── task_form.dart                   # Task form dialog
+    ├── pubspec.yaml                             # Flutter dependencies
+    └── README.md
 ```
-
-### 4. Token Refresh
-Tokens expire after 60 minutes (configurable via `JWT_TTL`). Use the `/api/refresh` endpoint to get a new token before expiration.
-
-### 5. Logout
-Call `/api/logout` to invalidate the current token.
-
-### Token Expiration Settings
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `JWT_TTL` | 60 | Token lifetime in minutes |
-| `JWT_REFRESH_TTL` | 20160 | Refresh window in minutes (14 days) |
 
 ---
 
 ## 🧪 Testing
 
-Run the test suite:
+### Backend Tests (Laravel)
+
+Run the full test suite:
 
 ```bash
+cd backend
+
 # Run all tests
 php artisan test
 
@@ -578,68 +726,217 @@ php artisan test --coverage
 # Run specific test file
 php artisan test tests/Feature/AuthTest.php
 php artisan test tests/Feature/TaskTest.php
+
+# Run tests with detailed output
+php artisan test --parallel
 ```
+
+**Test Coverage:**
+- ✅ User registration with validation
+- ✅ User login with credentials
+- ✅ Token refresh mechanism
+- ✅ Task CRUD operations
+- ✅ Task filtering and search
+- ✅ User isolation (tasks belong to users)
+- ✅ Authorization checks
 
 ---
 
-## 📂 Project Structure
+## 💭 Assumptions & Design Decisions
 
-```
-├── app/
-│   ├── Http/
-│   │   └── Controllers/
-│   │       └── Api/
-│   │           ├── AuthController.php    # Authentication endpoints
-│   │           └── TaskController.php    # Task CRUD operations
-│   └── Models/
-│       ├── User.php                      # User model with JWT
-│       └── Task.php                      # Task model
-├── config/
-│   ├── auth.php                          # Auth guards (JWT)
-│   ├── cors.php                          # CORS configuration
-│   └── jwt.php                           # JWT settings
-├── database/
-│   ├── factories/
-│   │   ├── UserFactory.php
-│   │   └── TaskFactory.php
-│   ├── migrations/
-│   │   ├── ..._create_users_table.php
-│   │   └── ..._create_tasks_table.php
-│   └── seeders/
-│       └── DatabaseSeeder.php
-├── routes/
-│   └── api.php                           # API routes
-├── tests/
-│   └── Feature/
-│       ├── AuthTest.php                  # Auth tests
-│       └── TaskTest.php                  # Task tests
-├── .env.example                          # Environment template
-└── README.md                             # This file
-```
+### Backend Decisions
+
+1. **JWT Authentication**: Chose JWT over session-based auth for stateless API design, enabling easier scaling and mobile app support in the future.
+
+2. **Task Status Enum**: Limited to three statuses (`pending`, `in_progress`, `done`) for simplicity. This can be easily extended to support custom statuses.
+
+3. **Soft Deletes**: Not implemented to keep the database simple. Can be added by using Laravel's `SoftDeletes` trait if needed.
+
+4. **Pagination**: Default 15 items per page with a maximum of 100 to balance performance and UX.
+
+5. **CORS Configuration**: Configured to allow all origins in development. Should be restricted to specific domains in production.
+
+### Frontend Decisions
+
+1. **Flutter Web over React**: Chose Flutter Web to demonstrate proficiency in Flutter while still delivering a web application. Flutter Web provides excellent performance and smooth animations.
+
+2. **Provider for State Management**: Selected Provider over other solutions (Bloc, Riverpod) for its simplicity and developer-friendly API, suitable for this app's scope.
+
+3. **Token Storage**: Using `shared_preferences` for token persistence. Tokens are stored securely and cleared on logout.
+
+4. **Grid/List Toggle**: Added view switching to enhance UX and demonstrate advanced UI implementation.
+
+5. **Animations**: Implemented staggered animations and micro-interactions to create a premium feel without over-engineering.
+
+### General Assumptions
+
+- Single-user environment (no task sharing or collaboration features)
+- Tasks are personal and private to each user
+- No file attachments or rich text in task descriptions
+- English language only (no i18n)
+- Modern browser support (Chrome, Firefox, Safari, Edge)
 
 ---
 
-## 🔧 Configuration Options
+## 🚀 Future Enhancements
 
-### CORS (config/cors.php)
+If given more time, these features could be added:
 
-Update `FRONTEND_URL` in `.env` to match your Flutter Web app URL:
+### High Priority
+- [ ] Docker containerization for easy deployment
+- [ ] Task due dates and reminders
+- [ ] Task priority levels (High, Medium, Low)
+- [ ] Task categories/labels
+- [ ] Email verification on registration
+- [ ] Password reset functionality
+
+### Medium Priority
+- [ ] Task attachments (file uploads)
+- [ ] Task comments/notes
+- [ ] Task sharing between users
+- [ ] Activity log/history
+- [ ] Export tasks (CSV, PDF)
+- [ ] Dark mode theme
+
+### Low Priority
+- [ ] Mobile app (Flutter iOS/Android)
+- [ ] Real-time updates (WebSockets)
+- [ ] Task templates
+- [ ] Recurring tasks
+- [ ] Advanced analytics dashboard
+- [ ] Integration with calendar apps
+
+---
+
+## 🔧 Configuration
+
+### Environment Variables
+
+#### Backend (.env)
 
 ```env
+# Application
+APP_NAME="Task Management API"
+APP_ENV=local
+APP_KEY=base64:...
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+
+# Database
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=task_management
+DB_USERNAME=root
+DB_PASSWORD=
+
+# JWT Configuration
+JWT_SECRET=...
+JWT_TTL=60                    # Token lifetime (minutes)
+JWT_REFRESH_TTL=20160         # Refresh window (14 days)
+
+# CORS
 FRONTEND_URL=http://localhost:3000
 ```
 
-### JWT Settings
+#### Frontend
 
-Modify JWT settings in `.env`:
+Update `lib/services/api_service.dart`:
 
-```env
-JWT_TTL=60           # Token lifetime in minutes
-JWT_REFRESH_TTL=20160 # Refresh window (14 days)
+```dart
+class ApiService {
+  static const String baseUrl = 'http://localhost:8000/api';
+  
+  // For production:
+  // static const String baseUrl = 'https://your-api-domain.com/api';
+}
 ```
+
+---
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### 1. CORS Error
+**Problem:** Frontend can't connect to backend API
+
+**Solution:**
+- Ensure `FRONTEND_URL` in backend `.env` matches your frontend URL
+- Clear config cache: `php artisan config:clear`
+- Restart Laravel server
+
+#### 2. JWT Token Invalid
+**Problem:** "Token Signature could not be verified"
+
+**Solution:**
+- Run `php artisan jwt:secret` to regenerate JWT secret
+- Clear cache: `php artisan config:clear`
+- Logout and login again in frontend
+
+#### 3. Database Connection Failed
+**Problem:** Can't connect to database
+
+**Solution:**
+- Verify database credentials in `.env`
+- Ensure MySQL is running: `sudo service mysql status`
+- Check database exists: `mysql -u root -p -e "SHOW DATABASES;"`
+
+#### 4. Flutter Build Error
+**Problem:** Flutter web build fails
+
+**Solution:**
+```bash
+flutter clean
+flutter pub get
+flutter pub upgrade
+flutter run -d chrome
+```
+
+---
+
+## 📝 Development Notes
+
+### Code Quality
+- **PSR-12** coding standard for Laravel backend
+- **Dart Effective Style** for Flutter frontend
+- **PHPDoc** comments on all controller methods
+- **Dart Doc** comments on public APIs
+
+### Security Considerations
+- Passwords hashed with bcrypt (cost factor: 12)
+- SQL injection prevention via Eloquent ORM
+- XSS protection with Laravel's built-in sanitization
+- CSRF protection on state-changing operations
+- Rate limiting on authentication endpoints (recommended for production)
 
 ---
 
 ## 📄 License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+## 👨‍💻 Author
+
+**[Your Name]**
+- Email: [your.email@example.com]
+- LinkedIn: [your-linkedin-profile]
+- GitHub: [@yourusername](https://github.com/yourusername)
+
+---
+
+## 🙏 Acknowledgments
+
+Built as part of the Junior Software Engineer technical assessment for Rawmart App. Thank you for the opportunity!
+
+---
+
+<div align="center">
+
+**⭐ If you found this project helpful, please consider giving it a star!**
+
+Made with ❤️ using Laravel & Flutter
+
+</div>
