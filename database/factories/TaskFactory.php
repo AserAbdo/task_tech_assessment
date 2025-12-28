@@ -25,10 +25,27 @@ class TaskFactory extends Factory
      */
     public function definition(): array
     {
+        $tasks = [
+            ['title' => 'Design homepage UI', 'description' => 'Create a modern and responsive design for the application homepage using Figma.'],
+            ['title' => 'Implement authentication', 'description' => 'Setup JWT authentication with login, register, and password reset functionality.'],
+            ['title' => 'Fix navigation bug', 'description' => 'Resolve the issue where the mobile menu does not close after clicking a link.'],
+            ['title' => 'Optimize database queries', 'description' => 'Analyze and index the database tables to improve query performance for the dashboard.'],
+            ['title' => 'Write API documentation', 'description' => 'Document all API endpoints using Swagger/OpenAPI for better developer experience.'],
+            ['title' => 'Setup CI/CD pipeline', 'description' => 'Configure GitHub Actions to automatically run tests and deploy to the staging server.'],
+            ['title' => 'Conduct user interviews', 'description' => 'Schedule and conduct interviews with 5 potential users to gather feedback on the prototype.'],
+            ['title' => 'Refactor legacy code', 'description' => 'Clean up the user controller and move logic to service classes for better maintainability.'],
+            ['title' => 'Update dependencies', 'description' => 'Upgrade Laravel and Node.js packages to their latest stable versions.'],
+            ['title' => 'Create marketing assets', 'description' => 'Design banners and social media posts for the upcoming product launch.'],
+            ['title' => 'Review pull requests', 'description' => 'Review pending code changes from the team and provide constructive feedback.'],
+            ['title' => 'Prepare monthly report', 'description' => 'Compile usage statistics and performance metrics for the monthly management meeting.'],
+        ];
+        
+        $task = fake()->randomElement($tasks);
+
         return [
             'user_id' => User::factory(),
-            'title' => fake()->sentence(rand(3, 8)),
-            'description' => fake()->optional(0.8)->paragraph(rand(1, 3)),
+            'title' => $task['title'],
+            'description' => $task['description'],
             'status' => fake()->randomElement(Task::getStatuses()),
             'created_at' => fake()->dateTimeBetween('-30 days', 'now'),
             'updated_at' => function (array $attributes) {

@@ -26,6 +26,16 @@ A RESTful API backend for a Task Management Application built with Laravel 12 an
 - **Comprehensive Validation**: Request validation with detailed error messages
 - **API Tests**: Full test coverage using Pest PHP
 
+## 📸 Screenshots
+
+| Task Dashboard |
+|:---:|
+| ![Task Dashboard](screenshots/home.png) |
+
+| Login Screen | Registration Screen |
+|:---:|:---:|
+| ![Login Screen](screenshots/login.png) | ![Registration Screen](screenshots/signup.png) |
+
 ## 📦 Requirements
 
 - PHP >= 8.2
